@@ -18,10 +18,16 @@ const PORT = process.env.PORT || 5000;
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://teja-0504.github.io', 'https://excel-xz7q.onrender.com'] 
+    ? [
+        'https://teja-0504.github.io', 
+        'https://excel-xz7q.onrender.com',
+        /^https:\/\/.*\.app\.github\.dev$/,
+        /^https:\/\/.*\.preview\.app\.github\.dev$/
+      ] 
     : [
         'http://localhost:3000', 
         'http://localhost:5173',
+        'http://localhost:5174',
         /^https:\/\/.*\.app\.github\.dev$/,
         /^https:\/\/.*\.preview\.app\.github\.dev$/
       ],
