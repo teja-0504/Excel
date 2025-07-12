@@ -101,7 +101,7 @@ export default function RegisterForm() {
           required
         >
           <option value="user">User</option>
-          <option value="admin">Admin</option>
+         
         </select>
       </label>
       <button
