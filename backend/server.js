@@ -21,6 +21,7 @@ app.use(cors({
     ? [
         'https://teja-0504.github.io', 
         'https://excel-xz7q.onrender.com',
+        'https://glowing-fiesta-wr5g94vv7wxx254jg-5174.app.github.dev',
         /^https:\/\/.*\.app\.github\.dev$/,
         /^https:\/\/.*\.preview\.app\.github\.dev$/
       ] 
@@ -28,6 +29,7 @@ app.use(cors({
         'http://localhost:3000', 
         'http://localhost:5173',
         'http://localhost:5174',
+        'https://glowing-fiesta-wr5g94vv7wxx254jg-5174.app.github.dev',
         /^https:\/\/.*\.app\.github\.dev$/,
         /^https:\/\/.*\.preview\.app\.github\.dev$/
       ],
