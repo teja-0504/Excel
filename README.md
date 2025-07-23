@@ -15,6 +15,7 @@ A web-based platform that allows users to upload, analyze, and visualize data fr
 
 Key Features
 
+
 User Authentication: Secure registration and login using JWT.
 Excel File Upload: Users can upload Excel files for analysis.
 Automated Data Analysis:
