@@ -17,6 +17,7 @@ Key Features
 
 
 User Authentication: Secure registration and login using JWT.
+
 Excel File Upload: Users can upload Excel files for analysis.
 Automated Data Analysis:
 Primary: Python scripts process the data for detailed analytics.
