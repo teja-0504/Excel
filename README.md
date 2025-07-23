@@ -19,8 +19,8 @@ Key Features
 User Authentication: Secure registration and login using JWT.    
 Excel File Upload: Users can upload Excel files for analysis.    
 Automated Data Analysis:  
-    Primary: Python scripts pr ocess the data for detailed analytics.
-    Fallback: If Python is unavailable, JavaScript provides a basic summary.
+    1.Primary: Python scripts pr ocess the data for detailed analytics.
+    2.Fallback: If Python is unavailable, JavaScript provides a basic summary.
 Chart Generation: Create visual charts based on the uploaded data.
 Upload & Chart History: Users can view and manage their history.
 Admin Features:
