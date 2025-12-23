@@ -37,10 +37,49 @@ app.use(cors({
 }));
 app.use(express.json({ limit: '10mb' }));
 
-// MongoDB connection
-mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log('MongoDB connected'))
-.catch((err) => console.error('MongoDB connection error:', err));
+// MongoDB connection with modern options
+const connectToMongoDB = async () => {
+  const mongooseOptions = {
+    serverSelectionTimeoutMS: 15000, // 15 seconds
+    socketTimeoutMS: 45000, // 45 seconds
+    family: 4, // Use IPv4, skip trying IPv6
+    maxPoolSize: 10 // Maintain up to 10 socket connections
+  };
+
+  console.log('Attempting to connect to MongoDB...');
+  
+  if (!process.env.MONGODB_URI) {
+    console.error('MONGODB_URI environment variable is not set!');
+    return;
+  }
+
+  try {
+    await mongoose.connect(process.env.MONGODB_URI, mongooseOptions);
+    console.log('MongoDB connected successfully ✅');
+    console.log('Database name:', mongoose.connection.db.databaseName);
+    console.log('Connection host:', mongoose.connection.host);
+  } catch (err) {
+    console.error('MongoDB connection failed ❌');
+    console.error('Error details:', {
+      name: err.name,
+      message: err.message,
+      code: err.code,
+      hostname: err.hostname
+    });
+    
+    // Suggest solutions based on error type
+    if (err.code === 'ENOTFOUND') {
+      console.log('\n🔧 Possible solutions:');
+      console.log('1. Check if your MongoDB Atlas cluster is running');
+      console.log('2. Verify the connection string is correct');
+      console.log('3. Check Network Access settings in MongoDB Atlas');
+      console.log('4. Try whitelisting 0.0.0.0/0 in MongoDB Atlas Network Access');
+    }
+  }
+};
+
+// Connect to MongoDB
+connectToMongoDB();
 
 // Basic route
 app.get('/', (req, res) => {
