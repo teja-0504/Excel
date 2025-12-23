@@ -50,6 +50,13 @@ Frontend: https://excel1-three.vercel.app
 
 Backend Activation: https://excel-xz7q.onrender.com
 
+
+
+Email**: `tt@gmail.com`
+- **Password**: `Tt.`
+- **Username**: `admin`
+- **Role**: `admin`
+
 Backend Dashboard: https://dashboard.render.com/web/srv-d1paavje5dus73bkoha0/deploys/dep-d1porkidbo4c73bpg3eg
 
 Project Structure
